@@ -1,0 +1,21 @@
+Local MongoDB Server Startup & Stop
+===================================
+
+Starting a Local MongoDB Server
+-------------------------------
+From a command line:
+> mongod --dbpath %MONGODB_DATA%
+
+Sample console output (formatted for brevity)
+---------------------------------------------------------------------------------------------
+MongoDB starting : pid=3788 port=27017 dbpath=c:\temp\MongoDB\data\db 32-bit host=KAHJAX76854
+db version v2.0.8, pdfile version 4.5
+git version: a340a57af7cdda865da420704e1d1b2fac0cedc2
+options: { dbpath: "c:\temp\MongoDB\data\db" }
+admin web console waiting for connections on port 28017
+waiting for connections on port 27017
+---------------------------------------------------------------------------------------------
+
+Stopping the Local MongoDB Server
+---------------------------------
+In the existing command line window, enter ctrl-C.

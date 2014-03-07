@@ -1,0 +1,57 @@
+Local MongoDB Install Notes
+===========================
+
+Local Install
+-------------
+Unzip the mongodb-win32-i386-2.x.x.zip locally (e.g. c:\tools\)
+SET MONGODB_HOME = c:\tools\mongodb-win32-i386-2.x.x
+
+Create the MongoDB data folder (e.g. c:\temp\MongoDB\data\db)
+SET MONGODB_DATA = c:\temp\MongoDB\data\db 
+
+Add the Mongo executables to the path
+SET PATH = %PATH%;%MONGODB_HOME%\bin
+
+
+Verify the install by:
+----------------------
+From a command line (start the mongodb server):
+> mongod --dbpath %MONGODB_DATA%
+
+From another command line (start the mongodb console):
+> mongo
+
+At the mongo console prompt, issue the following two commands to insert a record
+in the test collection of the default test database and then retrieve that record:
+
+> db.test.save( { a: 1 } )
+
+> db.test.find()
+{ "_id" : ObjectId("53192d5a400838af6b1c5bf4"), "a" : 1 }
+
+> exit
+
+
+Setting up MongoDB as a Windows Service
+---------------------------------------
+Open a command line as an Administrator:
+
+> cd c:\temp\MongoDB
+> md log
+> echo logpath=c:\temp\MongoDB\log\mongo.log > c:\temp\MongoDB\mongod.cfg
+> echo dbpath=c:\temp\MongoDB\data\db >> c:\temp\MongoDB\mongod.cfg
+
+> mongod --config c:\temp\MongoDB\mongod.cfg --install
+
+> net start MongoDB
+> net stop MongoDB
+
+
+
+
+
+To remove the MongoDB service:
+------------------------------
+> mongod --remove
+
+

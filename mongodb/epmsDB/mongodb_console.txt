@@ -1,0 +1,15 @@
+Local MongoDB epmsDB
+====================
+
+Start a MongoDB Console
+-----------------------
+From a new command line:
+c:\> mongo
+
+Mongo Console
+-------------
+> use epmsDB		         set current database
+> show collections	         show collections in current database
+> exit                       quit the mongo shell
+
+
